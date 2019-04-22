@@ -1,0 +1,149 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sky {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#579ddf -20%, #94ddff 30%, #d8f2ff);
+}
+
+.sea {
+    position: absolute;
+    top: 50vh;
+    width: 100vw;
+    height: 50vh;
+}
+
+.sea .waves {
+    position: absolute;
+    left: 0;
+    width: 130vw;
+    height: 40vh;
+}
+
+.sea .waves::before {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    content: "";
+}
+
+.sea .waves::after {
+    position: absolute;
+    width: 100%;
+    height: 45vh;
+    content: "";
+}
+
+.sea .waves.far {
+    top: 0;
+    animation: waves-far-translateX 4s infinite linear, waves-far-translateY 2s infinite ease-in-out alternate;
+}
+
+.sea .waves.far::before {
+    height: 5vh;
+    background: url(./wave-far.svg) repeat-x;
+    background-size: auto 5vh;
+}
+
+.sea .waves.far::after {
+    top: 5vh;
+    background: #1d7fc0;
+}
+
+@keyframes waves-far-translateX {
+    100% {
+        left: -5vh;
+    }
+}
+
+@keyframes waves-far-translateY {
+    100% {
+        transform: translateY(1.2vh);
+    }
+}
+
+.sea .waves.mid {
+    top: 8vh;
+    animation: waves-mid-translateX 3s infinite linear, waves-mid-translateY 1.5s infinite ease-in-out alternate;
+}
+
+.sea .waves.mid::before {
+    height: 7vh;
+    background: url(./wave-mid.svg) repeat-x;
+    background-size: auto 7vh;
+}
+
+.sea .waves.mid::after {
+    top: 7vh;
+    background: #2c94da;
+}
+
+@keyframes waves-mid-translateX {
+    100% {
+        left: -7vh;
+    }
+}
+
+@keyframes waves-mid-translateY {
+    100% {
+        transform: translateY(-2vh);
+    }
+}
+
+.sea .waves.near {
+    top: 25vh;
+    animation: waves-near-translateX 2s infinite linear, waves-near-translateY 1.0s infinite ease-in-out alternate;
+}
+
+.sea .waves.near::before {
+    height: 10vh;
+    background: url(./wave-near.svg) repeat-x;
+    background-size: auto 10vh;
+}
+
+.sea .waves.near::after {
+    top: 10vh;
+    background: #43a1e0;
+}
+
+@keyframes waves-near-translateX {
+    100% {
+        left: -10vh;
+    }
+}
+
+@keyframes waves-near-translateY {
+    100% {
+        transform: translateY(-5vh);
+    }
+}
+
+.boat {
+    position: absolute;
+    top: -13vh;
+    left: 5vw;
+    width: 75vh;
+    height: 30vh;
+    background: url(./boat.svg) no-repeat;
+    background-size: contain;
+    animation: boat-heave 1.5s infinite ease-in-out alternate, boat-pitch 1.8s infinite ease-in-out alternate;
+}
+
+@keyframes boat-pitch {
+    0% {
+        transform: rotate(0.2deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+@keyframes boat-heave {
+    100% {
+        top: -15vh;
+    }
+}
