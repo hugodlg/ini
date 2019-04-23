@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Port118';
+    src: url('port118.ttf') format('truetype');
+}
+
 html, body {
     height: 100vh;
     margin: 0;
@@ -8,6 +13,26 @@ html, body {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(#579ddf -20%, #94ddff 30%, #d8f2ff);
+}
+
+.title {
+    position: absolute;
+    top: 2vh;
+    right: 8vh;
+    font: bold 13vh Port118;
+}
+
+.title small {
+    font: bold 7vh Port118;
+}
+
+.title small small {
+    font: bold 5vh Port118;
+}
+
+.title p {
+    margin: 0 0 3vh 0;
+    text-align: right;
 }
 
 .sea {
@@ -40,7 +65,7 @@ html, body {
 
 .sea .waves.far {
     top: 0;
-    animation: waves-far-translateX 4s infinite linear, waves-far-translateY 2s infinite ease-in-out alternate;
+    animation: waves-far-translateX 4s infinite linear, waves-far-translateY 3s infinite ease-in-out alternate;
 }
 
 .sea .waves.far::before {
@@ -66,9 +91,39 @@ html, body {
     }
 }
 
+.boat {
+    position: absolute;
+    top: -12vh;
+    left: 5vw;
+    width: 75vh;
+    height: 30vh;
+    background: url(./boat.svg) no-repeat;
+    background-size: contain;
+    animation: boat-heave 2.8s infinite ease-in-out alternate, boat-pitch 5.6s 1.0s infinite ease-in-out;
+    transform: rotate(1deg);
+}
+
+@keyframes boat-pitch {
+    0% {
+        transform: rotate(1deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(1deg);
+    }
+}
+
+@keyframes boat-heave {
+    100% {
+        top: -15vh;
+    }
+}
+
 .sea .waves.mid {
     top: 8vh;
-    animation: waves-mid-translateX 3s infinite linear, waves-mid-translateY 1.5s infinite ease-in-out alternate;
+    animation: waves-mid-translateX 3s infinite linear, waves-mid-translateY 2.8s infinite ease-in-out alternate;
 }
 
 .sea .waves.mid::before {
@@ -95,55 +150,29 @@ html, body {
 }
 
 .sea .waves.near {
-    top: 25vh;
-    animation: waves-near-translateX 2s infinite linear, waves-near-translateY 1.0s infinite ease-in-out alternate;
+    top: 22vh;
+    animation: waves-near-translateX 3s infinite linear, waves-near-translateY 2.6s infinite ease-in-out alternate;
 }
 
 .sea .waves.near::before {
-    height: 10vh;
+    height: 14vh;
     background: url(./wave-near.svg) repeat-x;
-    background-size: auto 10vh;
+    background-size: auto 14vh;
 }
 
 .sea .waves.near::after {
-    top: 10vh;
+    top: 14vh;
     background: #43a1e0;
 }
 
 @keyframes waves-near-translateX {
     100% {
-        left: -10vh;
+        left: -14vh;
     }
 }
 
 @keyframes waves-near-translateY {
     100% {
         transform: translateY(-5vh);
-    }
-}
-
-.boat {
-    position: absolute;
-    top: -13vh;
-    left: 5vw;
-    width: 75vh;
-    height: 30vh;
-    background: url(./boat.svg) no-repeat;
-    background-size: contain;
-    animation: boat-heave 1.5s infinite ease-in-out alternate, boat-pitch 1.8s infinite ease-in-out alternate;
-}
-
-@keyframes boat-pitch {
-    0% {
-        transform: rotate(0.2deg);
-    }
-    100% {
-        transform: rotate(-3deg);
-    }
-}
-
-@keyframes boat-heave {
-    100% {
-        top: -15vh;
     }
 }
