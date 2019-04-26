@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'Port118';
-    src: url('port118.ttf') format('truetype');
-}
-
 html, body {
     height: 100vh;
     margin: 0;
@@ -17,22 +12,12 @@ html, body {
 
 .title {
     position: absolute;
-    top: 2vh;
-    right: 8vh;
-    font: bold 13vh Port118;
-}
-
-.title small {
-    font: bold 7vh Port118;
-}
-
-.title small small {
-    font: bold 5vh Port118;
-}
-
-.title p {
-    margin: 0 0 3vh 0;
-    text-align: right;
+    top: 5vh;
+    right: 6vh;
+    width: 65vh;
+    height: 25vh;
+    background: url(./title.svg) no-repeat;
+    background-size: contain;
 }
 
 .sea {
@@ -65,17 +50,17 @@ html, body {
 
 .sea .waves.far {
     top: 0;
-    animation: waves-far-translateX 4s infinite linear, waves-far-translateY 3s infinite ease-in-out alternate;
+    animation: waves-far-translateX 5s infinite linear, waves-far-translateY 3s infinite ease-in-out alternate;
 }
 
 .sea .waves.far::before {
-    height: 5vh;
+    height: 3vh;
     background: url(./wave-far.svg) repeat-x;
-    background-size: auto 5vh;
+    background-size: 5vh 3vh;
 }
 
 .sea .waves.far::after {
-    top: 5vh;
+    top: 3vh;
     background: #1d7fc0;
 }
 
@@ -93,7 +78,7 @@ html, body {
 
 .boat {
     position: absolute;
-    top: -12vh;
+    top: -11vh;
     left: 5vw;
     width: 75vh;
     height: 30vh;
@@ -117,7 +102,7 @@ html, body {
 
 @keyframes boat-heave {
     100% {
-        top: -15vh;
+        top: -14vh;
     }
 }
 
@@ -127,13 +112,13 @@ html, body {
 }
 
 .sea .waves.mid::before {
-    height: 7vh;
+    height: 5vh;
     background: url(./wave-mid.svg) repeat-x;
-    background-size: auto 7vh;
+    background-size: 7vh 5vh;
 }
 
 .sea .waves.mid::after {
-    top: 7vh;
+    top: 5vh;
     background: #2c94da;
 }
 
@@ -155,13 +140,13 @@ html, body {
 }
 
 .sea .waves.near::before {
-    height: 14vh;
+    height: 10vh;
     background: url(./wave-near.svg) repeat-x;
-    background-size: auto 14vh;
+    background-size: 14vh 10vh;
 }
 
 .sea .waves.near::after {
-    top: 14vh;
+    top: 10vh;
     background: #43a1e0;
 }
 
